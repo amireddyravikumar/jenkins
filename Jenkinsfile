@@ -49,7 +49,7 @@ pipeline {
 
         stage('Deploy') {
             when {
-                expression { "${params.DEPLOY}"}
+                expression { "${params.DEPLOY}" == "true"}
             }
             //  input {
             //         message "Should we continue?"
