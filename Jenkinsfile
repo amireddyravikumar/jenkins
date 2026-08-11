@@ -4,13 +4,16 @@ pipeline {
             label 'ROBOSHOP'
         }
     } // Runs this pipeline on any available worker/node
-
+    environment {
+        COURSE = "Jenkins"
+    }
     stages {
         stage('Build') {
             steps {
                 script {
                     sh """
                         echo 'Building the application...'
+                        echo "course is $COURSE"
                     """
                 }
             }
