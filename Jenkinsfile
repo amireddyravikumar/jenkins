@@ -1,5 +1,9 @@
 pipeline {
-    agent any // Runs this pipeline on any available worker/node
+    agent {
+        node {
+            label 'ROBOSHOP'
+        }
+    } // Runs this pipeline on any available worker/node
 
     stages {
         stage('Build') {
