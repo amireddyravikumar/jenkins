@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                       echo1 'Deploying to the server...'
+                       echo 'Deploying to the server...'
                     """
                 }
             }
