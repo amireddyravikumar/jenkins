@@ -23,6 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    
                     sh """
                         echo 'Building the application...'
                         echo "course is $COURSE"
@@ -48,6 +49,17 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                input {
+                    message "Should we continue?"
+                    ok "Yes, we should."
+                    submitter "alice,bob"
+                    parameters {
+                        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                    }
+                }
+                steps {
+                    echo "Hello, ${PERSON}, nice to meet you."
+                }
                 script {
                     sh """
                        echo 'Deploying to the server...'
