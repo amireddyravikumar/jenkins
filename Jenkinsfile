@@ -10,7 +10,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                echo 'Running automated tests...
+                echo 'Running automated tests...'
             }
         }
         
